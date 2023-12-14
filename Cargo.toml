@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "map_editor"
+]
+resolver = "2"
