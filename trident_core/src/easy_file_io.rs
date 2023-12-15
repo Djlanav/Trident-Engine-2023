@@ -1,14 +1,15 @@
+use glium::{DrawError, ProgramCreationError};
 use std::error::Error;
 use std::fs::File;
 use std::io::{Read, Write};
-use glium::{DrawError, ProgramCreationError};
 
 pub fn error_write_to_output(path: &str, error: ProgramCreationError) {
     let mut file = File::create(path).expect("Failed to create file.");
 
     let error_as_string = error.to_string();
 
-    file.write(error_as_string.as_ref()).expect("File write failed.");
+    file.write(error_as_string.as_ref())
+        .expect("File write failed.");
 }
 
 pub fn write_draw_error(path: &str, error: DrawError) {
@@ -16,7 +17,8 @@ pub fn write_draw_error(path: &str, error: DrawError) {
 
     let error_as_string = error.to_string();
 
-    file.write(error_as_string.as_ref()).expect("File write failed.");
+    file.write(error_as_string.as_ref())
+        .expect("File write failed.");
 }
 
 /// Load file into memory
