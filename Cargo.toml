@@ -1,6 +1,7 @@
 [workspace]
 
 members = [
-    "map_editor"
+    "map_editor",
+    "trident_core"
 ]
 resolver = "2"
